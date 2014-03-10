@@ -14,7 +14,12 @@ namespace TestAngular
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-route.js",
+                "~/Scripts/angular-animate.js",
                 "~/Scripts/ng-grid-{version}.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/toastr").Include(
+                "~/Scripts/toastr.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -31,14 +36,28 @@ namespace TestAngular
                 "~/Scripts/bootstrap.js"
                 ));
 
-            bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/app/app.js"
+            bundles.Add(new ScriptBundle("~/bundles/appInit").Include(
+                "~/app/app.js",
+                "~/app/config.js",
+                "~/app/config.route.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/appControllers").Include(
+                "~/app/home/home.js",
+                "~/app/testNgGrid/testNgGrid.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/appFactories").Include(
+                "~/app/factories/logger.js",
+                "~/app/factories/customerFactory.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
-                "~/Content/ng-grid.css",                
-                "~/Content/site.css"
+                "~/Content/bootstrap.css",                
+                "~/Content/ng-grid.css",             
+                "~/Content/site.css",
+                "~/Content/animate.css",
+                "~/Content/toastr.css"
                 ));
         }
     }
